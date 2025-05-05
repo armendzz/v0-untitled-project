@@ -26,16 +26,16 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="FSG Bau AG Logo" width={200} height={98} />
+          <Image src="/placeholder.svg?height=40&width=40" alt="FSG Bau AG Logo" width={40} height={40} />
           <motion.span
             className="text-xl font-bold"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-          
+            FSG Bau AG
           </motion.span>
         </Link>
 

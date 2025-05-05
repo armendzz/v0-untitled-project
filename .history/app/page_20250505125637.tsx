@@ -216,32 +216,32 @@ const services = [
   {
     title: "Umbau & Renovationen",
     description: "Wir modernisieren Ihr Zuhause oder Geschäftsgebäude mit höchster Qualität und Liebe zum Detail.",
-    image: "/IMG_9888.jpg",
+    image: "/placeholder.svg?height=400&width=600",
   },
   {
-    title: "Rückbau- & Abbrucharbeiten",
+    title: "Abbrucharbeiten",
     description: "Professionelle und sichere Durchführung von Abbrucharbeiten mit fachgerechter Entsorgung.",
-    image: "/IMG_0716.png",
+    image: "/placeholder.svg?height=400&width=600",
   },
   {
     title: "Betonbohrungen",
     description: "Präzise Betonbohrungen und -schnitte mit modernster Technik für jede Anforderung.",
-    image: "/beton.jpeg",
+    image: "/placeholder.svg?height=400&width=600",
   },
   {
     title: "Malerarbeiten",
     description: "Hochwertige Malerarbeiten für Innen- und Außenbereiche mit erstklassigen Materialien.",
-    image: "/IMG_0718-768x576.jpg",
+    image: "/placeholder.svg?height=400&width=600",
   },
   {
     title: "Gipserarbeiten",
     description: "Fachgerechte Gipserarbeiten für Neubauten, Renovierungen und Reparaturen.",
-    image: "/IMG_0718-768x576.jpg",
+    image: "/placeholder.svg?height=400&width=600",
   },
   {
     title: "Plattenarbeiten",
     description: "Kreative und präzise Verlegung von Fliesen und Platten für Bäder, Küchen und mehr.",
-    image: "/IMG_1637-768x576.jpg",
+    image: "/placeholder.svg?height=400&width=600",
   },
 ]
 

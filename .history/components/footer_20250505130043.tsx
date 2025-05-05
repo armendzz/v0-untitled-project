@@ -18,8 +18,8 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="mb-4 flex items-center gap-2">
-              <Image src="/logo.png" alt="FSG Bau AG Logo" width={200} height={100} />
-             
+              <Image src="/logo.png" alt="FSG Bau AG Logo" width={40} height={40} />
+              <span className="text-xl font-bold">FSG Bau AG</span>
             </div>
             <p className="mb-4 text-gray-400">
               Ihr zuverlässiger Partner für Bau- und Renovationsarbeiten in Zürich seit 1985.

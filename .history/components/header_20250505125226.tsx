@@ -26,9 +26,9 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="FSG Bau AG Logo" width={200} height={98} />
+          <Image src="/logo.png" alt="FSG Bau AG Logo" width={80} height={80} />
           <motion.span
             className="text-xl font-bold"
             initial={{ opacity: 0, x: -20 }}

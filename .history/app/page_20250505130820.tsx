@@ -231,17 +231,17 @@ const services = [
   {
     title: "Malerarbeiten",
     description: "Hochwertige Malerarbeiten für Innen- und Außenbereiche mit erstklassigen Materialien.",
-    image: "/IMG_0718-768x576.jpg",
+    image: "/IMG_0718-768x576.jpeg",
   },
   {
     title: "Gipserarbeiten",
     description: "Fachgerechte Gipserarbeiten für Neubauten, Renovierungen und Reparaturen.",
-    image: "/IMG_0718-768x576.jpg",
+    image: "/IMG_0718-768x576.jpeg",
   },
   {
     title: "Plattenarbeiten",
     description: "Kreative und präzise Verlegung von Fliesen und Platten für Bäder, Küchen und mehr.",
-    image: "/IMG_1637-768x576.jpg",
+    image: "/IMG_1637-768x576.jpeg",
   },
 ]
 
