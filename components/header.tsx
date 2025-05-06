@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Menu, Home, Wrench, Users, Phone, ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
 
 import { Button } from "@/components/ui/button"
@@ -13,15 +13,15 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Dienstleistungen", href: "/dienstleistungen" },
-    { name: "Über Uns", href: "/ueber-uns" },
-    { name: "Kontakt", href: "/kontakt" },
+    { name: "Home", href: "/", icon: Home },
+    { name: "Dienstleistungen", href: "/dienstleistungen", icon: Wrench },
+    { name: "Über Uns", href: "/ueber-uns", icon: Users },
+    { name: "Kontakt", href: "/kontakt", icon: Phone },
   ]
 
   return (
     <motion.header
-      className="sticky top-0 z-50 w-full border-b bg-white"
+      className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -35,7 +35,6 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-          
           </motion.span>
         </Link>
 
@@ -50,8 +49,9 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className="text-sm font-medium text-gray-700 transition-colors hover:text-orange-600"
+                className="flex items-center gap-2 text-xl font-bold text-gray-700 transition-colors hover:text-orange-600"
               >
+                <item.icon className="h-4 w-4" />
                 {item.name}
               </Link>
             </motion.div>
@@ -65,7 +65,8 @@ export default function Header() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <Button className="bg-orange-600 hover:bg-orange-700">
+          <Button variant="default" className="flex items-center gap-2">
+            <Phone className="h-4 w-4" />
             <Link href="/kontakt">Kontaktieren Sie uns</Link>
           </Button>
         </motion.div>
@@ -89,15 +90,20 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="text-lg font-medium text-gray-900 transition-colors hover:text-orange-600"
+                    className="flex items-center justify-between text-lg font-medium text-gray-900 transition-colors hover:text-orange-600"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {item.name}
+                    <div className="flex items-center gap-2">
+                      <item.icon className="h-5 w-5" />
+                      {item.name}
+                    </div>
+                    <ChevronRight className="h-5 w-5" />
                   </Link>
                 </motion.div>
               ))}
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Button className="mt-4 bg-orange-600 hover:bg-orange-700" onClick={() => setIsMenuOpen(false)}>
+                <Button className="mt-4 flex w-full items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700" onClick={() => setIsMenuOpen(false)}>
+                  <Phone className="h-4 w-4" />
                   <Link href="/kontakt">Kontaktieren Sie uns</Link>
                 </Button>
               </motion.div>

@@ -162,7 +162,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-gray-400">© {new Date().getFullYear()} FSG Bau AG. Alle Rechte vorbehalten.</p>
+            <p className="text-sm text-gray-400">© {new Date().getFullYear()} FSG Bau AG. Alle Rechte vorbehalten. Powered by <Link href="https://www.ndize.al" className="hover:text-white">Ndize.Al</Link></p>
             <div className="flex gap-4 text-sm text-gray-400">
               <Link href="/datenschutz" className="hover:text-white">
                 Datenschutz

@@ -105,17 +105,10 @@ export default function Dienstleistungen() {
                 helfen.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <AnimatedButton size="lg" className="bg-orange-600 hover:bg-orange-700" whileHover="glow">
+                <AnimatedButton size="lg" variant="default" whileHover="glow">
                   <Link href="/kontakt">Kontaktieren Sie uns</Link>
                 </AnimatedButton>
-                <AnimatedButton
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-gray-800"
-                  whileHover="glow"
-                >
-                  <Link href="/ueber-uns">Unsere Referenzen</Link>
-                </AnimatedButton>
+          
               </div>
             </div>
           </AnimatedSection>

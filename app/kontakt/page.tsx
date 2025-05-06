@@ -5,6 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { motion } from "framer-motion"
+import { toast } from "sonner"
 
 import { AnimatedButton } from "@/components/ui/animated-button"
 import { AnimatedCard } from "@/components/ui/animated-card"
@@ -31,13 +32,30 @@ export default function Kontakt() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const response = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.telefon,
+          message: formData.nachricht,
+        }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || "Etwas ist schiefgelaufen")
+      }
+
       setIsSubmitted(true)
       setFormData({
         name: "",
@@ -45,7 +63,12 @@ export default function Kontakt() {
         telefon: "",
         nachricht: "",
       })
-    }, 1500)
+      toast.success("Ihre Nachricht wurde erfolgreich gesendet")
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Etwas ist schiefgelaufen")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (

@@ -14,7 +14,7 @@ export default function UeberUns() {
       <section className="relative h-[300px] w-full">
         <div className="absolute inset-0">
           <AnimatedImage
-            src="/placeholder.svg?height=300&width=1200"
+            src="/hero.jpeg"
             alt="Über Uns Header"
             fill
             className="object-cover"
@@ -55,7 +55,7 @@ export default function UeberUns() {
             <AnimatedSection direction="left" delay={0.4}>
               <div className="relative h-[400px] overflow-hidden rounded-lg">
                 <AnimatedImage
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/LOGO-mit-Kreis (1).png"
                   alt="FSG Bau AG Firmengebäude"
                   fill
                   className="object-cover"
@@ -86,14 +86,14 @@ export default function UeberUns() {
                 className="relative mb-16 last:mb-0"
               >
                 {/* Year Circle */}
-                <div className="absolute left-1/2 top-0 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-orange-600 text-white">
-                  <Calendar className="h-6 w-6" />
+                <div className="absolute left-1/2 top-0 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-orange-600 text-white">
+                  <Calendar className="h-8 w-8" />
                 </div>
 
                 {/* Content */}
                 <div
                   className={`relative grid gap-8 rounded-lg border bg-white p-6 shadow-sm md:grid-cols-[1fr_auto_1fr] ${
-                    index % 2 === 0
+                    index === 0 || index === 2
                       ? "md:[&>div:first-child]:order-3 md:[&>div:last-child]:order-1 md:[&>div:last-child]:text-right"
                       : ""
                   }`}
@@ -104,6 +104,9 @@ export default function UeberUns() {
                   </div>
 
                   {/* Year Display (Center) */}
+                  <div className="flex items-center justify-center font-bold text-orange-600 md:hidden">
+                    {item.year}
+                  </div>
                   <div className="hidden items-center justify-center font-bold text-orange-600 md:flex">
                     {item.year}
                   </div>
@@ -116,6 +119,7 @@ export default function UeberUns() {
                       fill
                       className="object-cover"
                       effect="fade"
+                      priority={index === 0}
                     />
                   </div>
                 </div>
@@ -164,7 +168,7 @@ export default function UeberUns() {
             >
               <div className="mb-6 overflow-hidden rounded-lg">
                 <AnimatedImage
-                  src="/placeholder.svg?height=400&width=300"
+                  src="/Besnik_Bilali_FSG_2-768x841.jpeg"
                   alt="Besnik Bilali"
                   width={300}
                   height={400}
@@ -206,9 +210,9 @@ export default function UeberUns() {
                   Wir legen großen Wert auf Teamarbeit und eine offene Kommunikation, sowohl innerhalb unseres Teams als
                   auch mit unseren Kunden und Partnern.
                 </p>
-                <div className="relative h-[200px] overflow-hidden rounded-lg">
+                <div className="relative h-[400px] overflow-hidden rounded-lg">
                   <AnimatedImage
-                    src="/placeholder.svg?height=200&width=800"
+                    src="/2025-04-08.jpg"
                     alt="FSG Bau Team"
                     fill
                     className="object-cover"
@@ -222,20 +226,24 @@ export default function UeberUns() {
       </section>
 
       {/* CTA Section */}
+     
       <section className="bg-orange-600 py-16 text-white">
-        <div className="container text-center">
+        <div className="container">
           <AnimatedSection direction="up">
-            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Möchten Sie mehr über uns erfahren?</h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg">
-              Kontaktieren Sie uns für weitere Informationen über unser Unternehmen oder vereinbaren Sie einen
-              persönlichen Termin.
-            </p>
-            <AnimatedButton size="lg" className="bg-white text-orange-600 hover:bg-gray-100" whileHover="glow">
-              <Link href="/kontakt" className="flex items-center">
-                Kontakt aufnehmen
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </Link>
-            </AnimatedButton>
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
+              Möchten Sie mehr über uns erfahren?
+              </h2>
+              <p className="mb-8 text-lg">
+              Kontaktieren Sie uns für weitere Informationen über unser Unternehmen oder vereinbaren Sie einen persönlichen Termin.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <AnimatedButton size="lg" variant="default" whileHover="glow" className="bg-white text-orange-600 hover:bg-orange-50" >
+                  <Link href="/kontakt">Kontaktieren Sie uns</Link>
+                </AnimatedButton>
+          
+              </div>
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -247,27 +255,27 @@ const timelineItems = [
   {
     year: "1985",
     title: "Gründung der FSG Bau AG",
-    description: "Die FSG Bau AG wurde in Zürich gegründet und begann mit kleinen Renovierungsprojekten in der Region.",
-    image: "/placeholder.svg?height=200&width=300",
+    description: "Die Familie Fontana ruft die FSG Bau AG ins Leben und legt den Grundstein für ein etabliertes, Familiengeführtes Unternehmen, welches noch weitere Dekaden weitergeführt wird.",
+    image: "/1985.jpeg",
+  },
+  {
+    year: "1987",
+    title: "Die erste Generation",
+    description:
+      "Im Jahr 1987 tritt der erste aus der Familie Bilali der Firma bei, gefolgt von seinen zwei Brüdern. Der Grossvater Bilali prägte das Unternehmen mit leidenschaftlicher Hingabe und blieb bis zu seiner Pensionierung ein Eckpfeiler der Firma. Über 17 Jahre hinweg stand er mit Herzblut für die FSG Bau AG ein.",
+    image: "/1987.jpeg",
   },
   {
     year: "1993",
-    title: "Expansion des Unternehmens",
-    description:
-      "Erweiterung des Dienstleistungsangebots und Vergrößerung des Teams, um der steigenden Nachfrage gerecht zu werden.",
-    image: "/placeholder.svg?height=200&width=300",
-  },
-  {
-    year: "2005",
-    title: "Umzug in neue Geschäftsräume",
-    description: "Bezug der neuen Geschäftsräume an der Eibenstrasse 9 in Zürich, die bis heute unser Hauptsitz sind.",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Vom Lernenden zum Geschäftsführer",
+    description: "Der Sohn des Grossvaters Bilali tritt bei. Besnik Bilali folgt den Schritten seines Vaters und startet seine Karriere bei der FSG. Durch hartnäckige Arbeit avancierte Besnik Bilali vom Auszubildenden zum Vorarbeiter, dann zum Polier und schließlich zum stellvertretenden Geschäftsführer. Im Jahr 2014 übernahm er die Position des Stellvertretenden Geschäftsführers.",
+    image: "/1993.jpeg",
   },
   {
     year: "2023",
-    title: "40-jähriges Jubiläum",
-    description: "Feier des 40-jährigen Bestehens und Blick in die Zukunft mit neuen Projekten und Innovationen.",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Tradition in dritter Generation",
+    description: "Besnik Bilali führt nun als Geschäftsführender Inhaber das Unternehmen an, unterstützt von seinem Sohn Beson Bilali. So setzen wir als Familienunternehmen erfolgreich die Tradition in bereits drei Generationen fort.",
+    image: "/2023.jpeg",
   },
 ]
 
